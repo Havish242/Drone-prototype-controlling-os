@@ -3,7 +3,6 @@ This prototype provides a DroneOS-like web interface that combines a dashboard, 
 
 New UI highlights
 - Left sidebar for navigation (Dashboard, Flights, Missions, Drones, Logs, Settings)
-- Main content area with hero, cards (Live Video, Mission Library, Telemetry)
 - Right-side Controller panel with Takeoff, Land, and Return Home buttons
 - Simulated telemetry: altitude, speed, battery, GPS shown live
 
@@ -13,8 +12,7 @@ How to try the controller (local Django server)
 3. Use the Controller panel: Takeoff, Land, Return Home. Telemetry will update automatically.
 4. Click "Start Mission" to simulate a mission.
 
-Notes
-- Video feed is simulated. Replace `.video-placeholder` with a live video element if you have a stream.
+Notes:
 - Contact form still posts to `/api/contact` (Django endpoint) and will echo back submitted data.
 
 ## How to use
@@ -56,12 +54,6 @@ python manage.py runserver
 Hot reload / static preview: Since index.html is static, you can open it directly in the browser during UI development without running Django. Use the Django backend only when testing form submissions or simulating telemetry.
 
 Extending telemetry: Current telemetry values are simulated in script.js. To connect to a real drone (e.g., via MAVLink), replace the mock telemetry generator with a WebSocket or REST API call.
-
-Video feed: The .video-placeholder div can be replaced with:
-
-<video> tag pointing to a live RTSP/HTTP stream, or
-
-WebRTC for low-latency feeds.
 
 🚀 Future Features (Ideas):-
 
