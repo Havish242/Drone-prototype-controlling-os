@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drone Software Prototype</title>
+	<link rel="stylesheet" href="{% static 'contact_app/style.css' %}">
+</head>
+<body>
+	<header class="topbar">
+		<div class="brand">DroneOS</div>
+		<div class="search">
+			<input type="search" placeholder="Search missions, drones, telemetry..." />
+			<button>Search</button>
+		</div>
+		<div class="account">Hello, Pilot</div>
+	</header>
+
+	<div class="app-shell">
+		<aside class="sidebar">
+			<nav>
+				<a class="active">Dashboard</a>
+				<a>Flights</a>
+				<a>Missions</a>
+				<a>Drones</a>
+				<a>Logs</a>
+				<a>Settings</a>
+			</nav>
+			<div class="promo">Drone marketplace & components</div>
+		</aside>
+
+		<main class="content">
+			<section class="hero">
+				<h2>DroneOS Controller</h2>
+				<p>Manage fleets, plan missions, and control drones from a unified web interface.</p>
+			</section>
+
+			<section class="cards">
+				<article class="card">
+					<h3>Live Video</h3>
+					<div class="video-placeholder">No feed — simulated</div>
+					<button class="start-video">Start Feed</button>
+				</article>
+				<article class="card">
+					<h3>Mission Library</h3>
+					<ul>
+						<li>Survey Grid</li>
+						<li>Inspection Run</li>
+						<li>Delivery Route</li>
+					</ul>
+					<button class="start-mission">Start Mission</button>
+				</article>
+				<article class="card">
+					<h3>Telemetry</h3>
+					<div class="telemetry">
+						<div>Altitude: <span id="altitude">0</span> m</div>
+						<div>Speed: <span id="speed">0</span> m/s</div>
+						<div>Battery: <span id="battery">100</span>%</div>
+						<div>GPS: <span id="gps">--</span></div>
+					</div>
+				</article>
+			</section>
+
+			<section class="contact-section">
+				<h3>Contact / Feedback</h3>
+				<form id="contact-form">
+					<input type="text" name="name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Your Email" required>
+					<textarea name="message" placeholder="Your Message" required></textarea>
+					<button type="submit">Send</button>
+				</form>
+			</section>
+		</main>
+
+		<aside class="controller">
+			<div class="panel">
+				<h4>Controller</h4>
+				<button id="takeoff">Takeoff</button>
+				<button id="land">Land</button>
+				<button id="return">Return Home</button>
+				<hr />
+				<div class="status">Status: <span id="status">Idle</span></div>
+			</div>
+		</aside>
+	</div>
+
+	<footer class="site-footer">
+		<p>&copy; 2025 DroneOS Prototype</p>
+	</footer>
+	<div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
+	<script src="{% static 'contact_app/script.js' %}"></script>
+</body>
+</html>
