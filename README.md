@@ -7,7 +7,7 @@ New UI highlights
 - Simulated telemetry: altitude, speed, battery, GPS shown live
 
 How to try the controller (local Django server)
-1. Start the Django dev server (see previous README instructions).
+1. Start the Django dev server 
 2. Open http://127.0.0.1:8000/
 3. Use the Controller panel: Takeoff, Land, Return Home. Telemetry will update automatically.
 4. Click "Start Mission" to simulate a mission.
